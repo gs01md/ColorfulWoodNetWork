@@ -3,7 +3,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "ColorfulWoodNetWork"
-  s.version      = "0.0.0.2"
+  s.version      = "0.0.0.3"
   s.summary      = "网络封装"
 
   s.homepage     = "https://github.com/gs01md"
@@ -24,5 +24,6 @@ Pod::Spec.new do |s|
   s.dependency    'AFNetworking',       '~> 3.2.1'
   s.dependency    'RealReachability',   '~> 1.2.0'
   s.dependency    'ColorfulWoodSystem'
+  s.dependency    'ColorfulWoodTools'
 
 end
