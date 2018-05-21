@@ -61,9 +61,7 @@
 
     CWNetWorkManager * net = [CWNetWorkManager sharedManager];
 
-    [net POST:urlStr parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
-
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [net POST:urlStr parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 
         /**
          * 判断返回的接口数据是否有效
@@ -95,9 +93,7 @@
 
     CWNetWorkManager * net = [CWNetWorkManager sharedManager];
 
-    [net GET:urlStr parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
-
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [net GET:urlStr parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 
         /**
          * 判断返回的接口数据是否有效
