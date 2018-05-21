@@ -3,7 +3,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "ColorfulWoodNetWork"
-  s.version      = "0.0.0.1"
+  s.version      = "0.0.0.2"
   s.summary      = "网络封装"
 
   s.homepage     = "https://github.com/gs01md"
@@ -18,10 +18,11 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.2"
 
-#s.frameworks   = 'UIKit'
+  s.frameworks   = 'Foundation'
 
   s.dependency    'JSONModel',          '~> 1.7.0'
   s.dependency    'AFNetworking',       '~> 3.2.1'
   s.dependency    'RealReachability',   '~> 1.2.0'
+  s.dependency    'ColorfulWoodSystem'
 
 end

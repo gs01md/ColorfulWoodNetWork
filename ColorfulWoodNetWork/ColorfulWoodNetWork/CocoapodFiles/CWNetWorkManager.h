@@ -7,7 +7,14 @@
 //
 
 #import "AFNetworking/AFNetworking.h"
+#import "CWNetWorkHeaderParam.h"
+#import "CWNetWorkError.h"
+#import "CWNetWorkDefine.h"
 
 @interface CWNetWorkManager : AFHTTPSessionManager
+
++ (instancetype)sharedManager;
+
+- (void)interface_changeParams:(NSMutableArray<CWNetWorkHeaderParam*>*)array;
 
 @end

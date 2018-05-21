@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B13B8D820B25054009A707E /* CWNetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B13B8D720B25054009A707E /* CWNetWorkRequest.m */; };
+		8B3B4D7720AECD6B00BFD604 /* CWNetWorkCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3B4D7620AECD6B00BFD604 /* CWNetWorkCheck.m */; };
 		8B4A068A20AC0FED00D6C447 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4A068920AC0FED00D6C447 /* AppDelegate.m */; };
 		8B4A068D20AC0FED00D6C447 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4A068C20AC0FED00D6C447 /* ViewController.m */; };
 		8B4A069020AC0FED00D6C447 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B4A068E20AC0FED00D6C447 /* Main.storyboard */; };
@@ -14,11 +16,18 @@
 		8B4A069520AC0FF300D6C447 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B4A069320AC0FF300D6C447 /* LaunchScreen.storyboard */; };
 		8B4A069820AC0FF300D6C447 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4A069720AC0FF300D6C447 /* main.m */; };
 		8B4A06A120AC1B4200D6C447 /* CWNetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4A06A020AC1B4200D6C447 /* CWNetWorkManager.m */; };
-		8B4A06A420AC2BC400D6C447 /* CWNetWorkParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4A06A320AC2BC400D6C447 /* CWNetWorkParams.m */; };
+		8B4A06A420AC2BC400D6C447 /* CWNetWorkHeaderParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4A06A320AC2BC400D6C447 /* CWNetWorkHeaderParams.m */; };
+		8B4A06CA20AC35B700D6C447 /* CWNetWorkHeaderParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4A06C920AC35B700D6C447 /* CWNetWorkHeaderParam.m */; };
+		8B61112D20AD884100D55C3A /* CWNetWorkError.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B61112C20AD884100D55C3A /* CWNetWorkError.m */; };
 		AED26078E4364E02494EE4CE /* libPods-ColorfulWoodNetWork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8D5E43B575A50BE70F6C42 /* libPods-ColorfulWoodNetWork.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B13B8D620B25054009A707E /* CWNetWorkRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWNetWorkRequest.h; sourceTree = "<group>"; };
+		8B13B8D720B25054009A707E /* CWNetWorkRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWNetWorkRequest.m; sourceTree = "<group>"; };
+		8B13B8D920B2664D009A707E /* CWNetWorkDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWNetWorkDefine.h; sourceTree = "<group>"; };
+		8B3B4D7520AECD6B00BFD604 /* CWNetWorkCheck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWNetWorkCheck.h; sourceTree = "<group>"; };
+		8B3B4D7620AECD6B00BFD604 /* CWNetWorkCheck.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWNetWorkCheck.m; sourceTree = "<group>"; };
 		8B4A068520AC0FED00D6C447 /* ColorfulWoodNetWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorfulWoodNetWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B4A068820AC0FED00D6C447 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8B4A068920AC0FED00D6C447 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -31,8 +40,13 @@
 		8B4A069720AC0FF300D6C447 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8B4A069F20AC1B4200D6C447 /* CWNetWorkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWNetWorkManager.h; sourceTree = "<group>"; };
 		8B4A06A020AC1B4200D6C447 /* CWNetWorkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWNetWorkManager.m; sourceTree = "<group>"; };
-		8B4A06A220AC2BC400D6C447 /* CWNetWorkParams.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWNetWorkParams.h; sourceTree = "<group>"; };
-		8B4A06A320AC2BC400D6C447 /* CWNetWorkParams.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWNetWorkParams.m; sourceTree = "<group>"; };
+		8B4A06A220AC2BC400D6C447 /* CWNetWorkHeaderParams.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWNetWorkHeaderParams.h; sourceTree = "<group>"; };
+		8B4A06A320AC2BC400D6C447 /* CWNetWorkHeaderParams.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWNetWorkHeaderParams.m; sourceTree = "<group>"; };
+		8B4A06C720AC2F9E00D6C447 /* ColorfulWoodNetWork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorfulWoodNetWork.h; sourceTree = "<group>"; };
+		8B4A06C820AC35B700D6C447 /* CWNetWorkHeaderParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWNetWorkHeaderParam.h; sourceTree = "<group>"; };
+		8B4A06C920AC35B700D6C447 /* CWNetWorkHeaderParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWNetWorkHeaderParam.m; sourceTree = "<group>"; };
+		8B61112B20AD884100D55C3A /* CWNetWorkError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWNetWorkError.h; sourceTree = "<group>"; };
+		8B61112C20AD884100D55C3A /* CWNetWorkError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWNetWorkError.m; sourceTree = "<group>"; };
 		8E9FD4C11D5B9FAFC26D0243 /* Pods-ColorfulWoodNetWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorfulWoodNetWork.release.xcconfig"; path = "Pods/Target Support Files/Pods-ColorfulWoodNetWork/Pods-ColorfulWoodNetWork.release.xcconfig"; sourceTree = "<group>"; };
 		FE3480E33A4ED9EC83DC6E6C /* Pods-ColorfulWoodNetWork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorfulWoodNetWork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ColorfulWoodNetWork/Pods-ColorfulWoodNetWork.debug.xcconfig"; sourceTree = "<group>"; };
 		FF8D5E43B575A50BE70F6C42 /* libPods-ColorfulWoodNetWork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ColorfulWoodNetWork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,10 +119,20 @@
 		8B4A069E20AC146B00D6C447 /* CocoapodFiles */ = {
 			isa = PBXGroup;
 			children = (
+				8B4A06C720AC2F9E00D6C447 /* ColorfulWoodNetWork.h */,
 				8B4A069F20AC1B4200D6C447 /* CWNetWorkManager.h */,
 				8B4A06A020AC1B4200D6C447 /* CWNetWorkManager.m */,
-				8B4A06A220AC2BC400D6C447 /* CWNetWorkParams.h */,
-				8B4A06A320AC2BC400D6C447 /* CWNetWorkParams.m */,
+				8B4A06A220AC2BC400D6C447 /* CWNetWorkHeaderParams.h */,
+				8B4A06A320AC2BC400D6C447 /* CWNetWorkHeaderParams.m */,
+				8B4A06C820AC35B700D6C447 /* CWNetWorkHeaderParam.h */,
+				8B4A06C920AC35B700D6C447 /* CWNetWorkHeaderParam.m */,
+				8B61112B20AD884100D55C3A /* CWNetWorkError.h */,
+				8B61112C20AD884100D55C3A /* CWNetWorkError.m */,
+				8B3B4D7520AECD6B00BFD604 /* CWNetWorkCheck.h */,
+				8B3B4D7620AECD6B00BFD604 /* CWNetWorkCheck.m */,
+				8B13B8D620B25054009A707E /* CWNetWorkRequest.h */,
+				8B13B8D720B25054009A707E /* CWNetWorkRequest.m */,
+				8B13B8D920B2664D009A707E /* CWNetWorkDefine.h */,
 			);
 			path = CocoapodFiles;
 			sourceTree = "<group>";
@@ -205,9 +229,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B4A06A420AC2BC400D6C447 /* CWNetWorkParams.m in Sources */,
+				8B4A06A420AC2BC400D6C447 /* CWNetWorkHeaderParams.m in Sources */,
 				8B4A06A120AC1B4200D6C447 /* CWNetWorkManager.m in Sources */,
+				8B13B8D820B25054009A707E /* CWNetWorkRequest.m in Sources */,
+				8B61112D20AD884100D55C3A /* CWNetWorkError.m in Sources */,
+				8B4A06CA20AC35B700D6C447 /* CWNetWorkHeaderParam.m in Sources */,
 				8B4A068D20AC0FED00D6C447 /* ViewController.m in Sources */,
+				8B3B4D7720AECD6B00BFD604 /* CWNetWorkCheck.m in Sources */,
 				8B4A069820AC0FF300D6C447 /* main.m in Sources */,
 				8B4A068A20AC0FED00D6C447 /* AppDelegate.m in Sources */,
 			);

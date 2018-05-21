@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "CWNetWorkRequest.h"
 
-@interface ViewController ()
+@interface ViewController ()<
+CWNetWorkRequestDelegate
+>
 
 @end
 
@@ -16,13 +19,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    NSDictionary * dic = @{@"1":@"1"};
+    [[CWNetWorkRequest alloc] initAndRequestWithUrl:@"https://www.nbastories.com/v1/test" type:CWNetWorkRequestType_Get params:dic delegate:self];
+
 }
 
+- (void)CWNetWorkRequestDelegate_success:(id)information{
+    NSLog(@"%@",information);
+}
+
+- (void)CWNetWorkRequestDelegate_failure:(CWNetWorkError *)error{
+    NSLog(@"%@",error.m_code);
+
+
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 

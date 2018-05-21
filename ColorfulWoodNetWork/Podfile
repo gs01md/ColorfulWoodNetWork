@@ -7,5 +7,8 @@ target 'ColorfulWoodNetWork' do
 pod 'AFNetworking',       '~> 3.2.1'
 pod 'RealReachability',   '~> 1.2.0'
 pod 'JSONModel',          '~> 1.7.0'
+pod 'ColorfulWoodSystem'
+pod 'ColorfulWoodTools'
+
 
 end

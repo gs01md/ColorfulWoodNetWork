@@ -1,0 +1,46 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - ColorfulWoodNetWork (0.0.0.1):
+    - AFNetworking (~> 3.2.1)
+    - JSONModel (~> 1.7.0)
+    - RealReachability (~> 1.2.0)
+  - JSONModel (1.7.0)
+  - RealReachability (1.2.0):
+    - RealReachability/Connection (= 1.2.0)
+    - RealReachability/Ping (= 1.2.0)
+  - RealReachability/Connection (1.2.0)
+  - RealReachability/Ping (1.2.0)
+
+DEPENDENCIES:
+  - ColorfulWoodNetWork
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - ColorfulWoodNetWork
+    - JSONModel
+    - RealReachability
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  ColorfulWoodNetWork: 9625bd132ec026923f2e6c3f76c8e745b915e058
+  JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
+  RealReachability: 5e4759f821ecc1c03f6e1db0baf682ef59468b5f
+
+PODFILE CHECKSUM: b170cb6cf7f18cecba111f97ac27d98fc495bc18
+
+COCOAPODS: 1.5.2
