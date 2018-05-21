@@ -21,7 +21,7 @@ CWNetWorkRequestDelegate
     [super viewDidLoad];
 
     NSDictionary * dic = @{@"1":@"1"};
-    [[CWNetWorkRequest alloc] initAndRequestWithUrl:@"https://www.nbastories.com/v1/test" type:CWNetWorkRequestType_Get params:dic delegate:self];
+    [[CWNetWorkRequest alloc] initAndRequestWithUrl:@"www.baidu.com" type:CWNetWorkRequestType_Get params:dic delegate:self];
 
 }
 

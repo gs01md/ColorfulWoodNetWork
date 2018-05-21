@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import <ColorfulWoodNetWork/CWNetWorkParams.h>
+#import <ColorfulWoodNetWork/ColorfulWoodNetWork.h>
 
 @interface ViewController ()
 
@@ -17,13 +17,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    NSDictionary * dic = @{@"1":@"1"};
+    [[CWNetWorkRequest alloc] initAndRequestWithUrl:@"" type:CWNetWorkRequestType_Get params:dic delegate:self];
+
 }
 
+- (void)CWNetWorkRequestDelegate_success:(id)information{
+    NSLog(@"%@",information);
+}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)CWNetWorkRequestDelegate_failure:(CWNetWorkError *)error{
+    NSLog(@"%@",error.m_code);
+
+
 }
 
 
