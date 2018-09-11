@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "80CD92ECE83C03F3BA8F479F6ACD5C4C"
+               BlueprintIdentifier = "7957FE0D9100BB6AF3FD154D35313CC2"
                BlueprintName = "Pods-ColorfulWoodNetWork"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libPods-ColorfulWoodNetWork.a">

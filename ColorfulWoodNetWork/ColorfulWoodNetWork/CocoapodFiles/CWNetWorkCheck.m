@@ -79,6 +79,38 @@
     return valid;
 }
 
+/**
+ * 返回的结果是否是有效，是否包含code，code是否为“0”
+ * codeRight: 正确的code值
+ */
++ (BOOL)interface_check:(id)responseObject codeRight:(NSString*)codeRight{
+
+    BOOL valid = FALSE;
+
+    if (!codeRight || codeRight.length <= 0) {
+        codeRight = @"0";
+    }
+
+    if (responseObject) {
+
+        if ([responseObject isKindOfClass:[NSDictionary class]] ||
+            [responseObject isKindOfClass:[NSMutableDictionary class]]) {
+
+            NSString* code = responseObject[@"code"];
+
+            if (code && [code isKindOfClass:[NSString class]]
+                ) {
+
+                if ([code isEqual:@"0"]) {
+                    valid = TRUE;
+                }
+            }
+        }
+    }
+
+    return valid;
+}
+
 
 
 

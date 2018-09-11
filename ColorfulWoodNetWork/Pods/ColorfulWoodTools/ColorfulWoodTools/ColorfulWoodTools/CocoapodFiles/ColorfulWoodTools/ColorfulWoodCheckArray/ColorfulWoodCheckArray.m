@@ -19,7 +19,9 @@
 
     NSString * str = @"";
     if (array &&
-        ([[array class] isEqual:[NSArray class]] ||
+        ([array isKindOfClass:[NSArray class]] ||
+         [array isKindOfClass:[NSMutableArray class]] ||
+         [[array class] isEqual:[NSArray class]] ||
          [[array class] isEqual:[NSMutableArray class]] ||
          [[array class] isKindOfClass:[NSArray class]] ||
          [[array class] isKindOfClass:[NSMutableArray class]] ||
@@ -46,7 +48,10 @@
 + (BOOL)interface_checkArray:(NSArray*)array{
 
     if (array &&
-        ([[array class] isEqual:[NSArray class]] ||
+        (
+         [array isKindOfClass:[NSArray class]] ||
+         [array isKindOfClass:[NSMutableArray class]] ||
+         [[array class] isEqual:[NSArray class]] ||
          [[array class] isEqual:[NSMutableArray class]] ||
          [[array class] isKindOfClass:[NSArray class]] ||
          [[array class] isKindOfClass:[NSMutableArray class]] ||

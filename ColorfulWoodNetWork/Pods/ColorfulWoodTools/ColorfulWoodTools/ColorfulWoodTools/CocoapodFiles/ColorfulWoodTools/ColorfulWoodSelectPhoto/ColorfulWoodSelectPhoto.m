@@ -1,22 +1,26 @@
 //
 //  ColorfulWoodSelectPhoto.m
 //  ColorfulWoodTools
-//
+//  请使用三方库 TZImagePickerController
 //  Created by 大新 on 2017/3/21.
 //  Copyright © 2017年 ColorfulWood. All rights reserved.
 //
 
 #import "ColorfulWoodSelectPhoto.h"
 #import "ColorfullWoodToolDefine.h"
+#import <Photos/PHPhotoLibrary.h>
+#import <AVFoundation/AVFoundation.h>
+#import "ColorfulWoodAlert.h"
 
 @interface ColorfulWoodSelectPhoto()<
 UIImagePickerControllerDelegate,
 UINavigationControllerDelegate,
 UIActionSheetDelegate
 >{
-    
-    UIActionSheet *m_sheet;
+
 }
+
+@property(nonatomic, weak)UIAlertController* m_alertCtl;
 
 @property(nonatomic, weak)UIViewController* m_viewController;
 
@@ -26,86 +30,100 @@ UIActionSheetDelegate
 @implementation ColorfulWoodSelectPhoto
 #pragma mark - 点击头像
 
+
 /**
  *  点击头像
  *
  *  @param viewController 显示视图
  */
-- (instancetype)initWithWithView:(UIViewController*)viewController{
+- (instancetype)initWithController:(UIViewController*)viewController{
     
     if (self = [super init]) {
-     
         self.m_viewController = viewController;
-        
-        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-            
-            m_sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil, nil];
-            [m_sheet addButtonWithTitle:@"拍照"];
-            [m_sheet addButtonWithTitle:@"从手机相册选择"];
-            [m_sheet addButtonWithTitle:@"取消"];
-            m_sheet.cancelButtonIndex = m_sheet.numberOfButtons - 1;
-            
-        } else {
-            
-            m_sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil, nil];
-            [m_sheet addButtonWithTitle:@"使用相册"];
-            [m_sheet addButtonWithTitle:@"取消"];
-            m_sheet.cancelButtonIndex = m_sheet.numberOfButtons - 1;
-        }
-        
-        m_sheet.tag = 255;
-        [m_sheet showInView:self.m_viewController.view];
     }
     
     return self;
 
 }
-#pragma mark - UIActionSheetDelegate
--(void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
-    
-    if (actionSheet.tag == 255) {
-        
-        NSUInteger sourceType = 0;
-        
-        // 判断是否支持相机
-        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-            
-            switch (buttonIndex) {
-                case 2:
-                    // 取消
-                    return;
-                case 0:
-                    // 相机
-                    sourceType = UIImagePickerControllerSourceTypeCamera;
-                    break;
-                    
-                case 1:
-                    // 相册
-                    sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-                    break;
-            }
-        }
-        else {
-            if (buttonIndex == 1) {
-                
-                return;
-            } else {
-                sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-            }
-        }
-        
-        
-        // 跳转到相机或相册页面
-        UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-        imagePickerController.navigationController.delegate=self;
-        imagePickerController.delegate = self;
-        imagePickerController.allowsEditing = YES;
-        imagePickerController.sourceType = sourceType;
-        [self.m_viewController presentViewController:imagePickerController animated:YES completion:^{
-        }];
+
+- (void)interface_show{
+
+    if ([self func_check]) {
+        [self interface_showAfterCheck];
+    } else {
+        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:nil message:@"请在iPhone的“设置-隐私-相机”选项中，允许方石榴访问你的相机。" preferredStyle:UIAlertControllerStyleAlert];
+        [alertVC addAction:[UIAlertAction actionWithTitle:@"好" style:UIAlertActionStyleDefault handler:nil]];
+        [self.m_viewController presentViewController:alertVC animated:YES completion:nil];
     }
-    
+}
+
+- (void)interface_showAfterCheck{
+
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+
+    // 跳转到相机或相册页面
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.navigationController.delegate=self;
+    imagePickerController.delegate = self;
+    imagePickerController.allowsEditing = YES;
+
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+
+        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+
+            imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+
+            [self.m_viewController presentViewController:imagePickerController animated:YES completion:^{
+            }];
+
+        }];
+        [alert addAction:action1];
+
+        UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"从手机相册选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+
+            imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+
+            [self.m_viewController presentViewController:imagePickerController animated:YES completion:^{
+            }];
+
+        }];
+        [alert addAction:action2];
+
+        UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        }];
+        [alert addAction:action3];
+
+
+    } else {
+
+        UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"使用相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+
+            imagePickerController.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+
+            [self.m_viewController presentViewController:imagePickerController animated:YES completion:^{
+            }];
+        }];
+        [alert addAction:action2];
+
+        UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        }];
+        [alert addAction:action3];
+    }
+
+    if (alert) {
+        [self.m_viewController presentViewController:alert animated:YES completion:nil];
+    }
+}
+
+- (BOOL)func_check{
+
+    NSString *mediaType = AVMediaTypeVideo;
+    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
+    if (authStatus == AVAuthorizationStatusRestricted || authStatus == AVAuthorizationStatusDenied){
+        return NO;
+    } else {
+        return YES;
+    }
 }
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
@@ -226,5 +244,16 @@ UIActionSheetDelegate
     {
         return originalImage;
     }
+}
+
+#pragma mark - 属性
+
+- (UIAlertController*)m_alertCtl {
+
+    if (!_m_alertCtl) {
+        _m_alertCtl = [UIAlertController alertControllerWithTitle:@"" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    }
+
+    return _m_alertCtl;
 }
 @end

@@ -1,1 +1,1 @@
-../../../ColorfulWoodTools/ColorfulWoodTools/ColorfulWoodTools/ColorfulWoodCheckArray.h
+../../../ColorfulWoodTools/ColorfulWoodTools/ColorfulWoodTools/CocoapodFiles/ColorfulWoodTools/ColorfulWoodCheckArray/ColorfulWoodCheckArray.h

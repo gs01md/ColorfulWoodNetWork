@@ -1,7 +1,7 @@
 //
 //  ColorfulWoodSelectPhoto.h
 //  ColorfulWoodTools
-//
+//  请使用三方库 TZImagePickerController
 //  Created by 大新 on 2017/3/21.
 //  Copyright © 2017年 ColorfulWood. All rights reserved.
 //
@@ -36,7 +36,9 @@
  *
  *  @param viewController 显示视图
  */
-- (instancetype)initWithWithView:(UIViewController*)viewController;
+- (instancetype)initWithController:(UIViewController*)viewController;
+
+- (void)interface_show;
 
 
 @end

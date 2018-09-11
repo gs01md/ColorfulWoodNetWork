@@ -12,7 +12,12 @@
 
 typedef enum : NSUInteger {
     CWNetWorkRequestType_Get = 1,
-    CWNetWorkRequestType_Post = 2,
+    CWNetWorkRequestType_Post,
+
+    /**
+     * Form只有post形式
+     */
+    CWNetWorkRequestType_Form
 } CWNetWorkRequestType;
 
 

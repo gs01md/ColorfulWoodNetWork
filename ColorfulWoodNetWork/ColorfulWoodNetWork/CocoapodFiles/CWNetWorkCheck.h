@@ -26,4 +26,11 @@
  * 返回的结果是否是有效，是否包含code 、 message 和 content
  */
 + (BOOL)interface_check:(id)responseObject;
+
+
+/**
+ * 返回的结果是否是有效，是否包含code，code是否为“0”
+ * codeRight: 正确的code值
+ */
++ (BOOL)interface_check:(id)responseObject codeRight:(NSString*)codeRight;
 @end

@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - ColorfulWoodNetWork (0.0.0.5):
+  - ColorfulWoodNetWork (1.0.0):
     - AFNetworking (~> 3.2.1)
     - ColorfulWoodSystem
     - ColorfulWoodTools
@@ -46,7 +46,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  ColorfulWoodNetWork: 22d1b9b8304a6d245e819fdb3adbcedc56520f4c
+  ColorfulWoodNetWork: 51af80e85f485757fea41a7adfb177d6ed8f489a
   ColorfulWoodSystem: 013237e4352eebb043f964eb106f064d56ba74a6
   ColorfulWoodTools: 205dcfb465bd65f7cc23f83d6aa3e7e697ad7c89
   JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d

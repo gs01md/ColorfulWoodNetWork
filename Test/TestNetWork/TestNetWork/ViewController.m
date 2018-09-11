@@ -18,8 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSDictionary * dic = @{@"1":@"1"};
-    [[CWNetWorkRequest alloc] initAndRequestWithUrl:@"" type:CWNetWorkRequestType_Get params:dic delegate:self];
+    NSDictionary * dic = @{@"id":@"12121"};
+    [[CWNetWorkRequest alloc] initAndRequestWithUrl:@"https://www.nbastories.com/v1/test?update" type:CWNetWorkRequestType_Post params:dic delegate:self];
 
 }
 
