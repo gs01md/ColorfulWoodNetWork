@@ -20,8 +20,8 @@ CWNetWorkRequestDelegate
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSDictionary * dic = @{@"1":@"1"};
-    [[CWNetWorkRequest alloc] initAndRequestWithUrl:@"www.baidu.com" type:CWNetWorkRequestType_Get params:dic delegate:self];
+    //NSDictionary * dic = @{@"1":@"1"};
+    //[[CWNetWorkRequest alloc] initAndRequestWithUrl:@"www.baidu.com" type:CWNetWorkRequestType_Get params:dic delegate:self];
 
 }
 
