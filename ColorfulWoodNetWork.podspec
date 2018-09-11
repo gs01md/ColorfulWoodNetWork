@@ -3,7 +3,7 @@
 Pod::Spec.new do |s|
 
 s.name         = "ColorfulWoodNetWork"
-s.version      = "1.0.1"
+s.version      = "1.0.2"
 s.summary      = "网络封装"
 
 s.homepage     = "https://github.com/gs01md"
@@ -16,7 +16,7 @@ s.source       = { :git => "https://github.com/gs01md/ColorfulWoodNetWork.git", 
 
 s.source_files = "ColorfulWoodNetWork/ColorfulWoodNetWork/CocoapodFiles/*"
 
-s.platform     = :ios, "8.2"
+s.platform     = :ios, "9.0"
 
 s.frameworks   = 'Foundation'
 
