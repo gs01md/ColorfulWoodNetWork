@@ -10,6 +10,7 @@
 		8B11ADF4214756E3009537F5 /* ColorfulWoodNetWork.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8B11ADF3214756E2009537F5 /* ColorfulWoodNetWork.podspec */; };
 		8B13B8D820B25054009A707E /* CWNetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B13B8D720B25054009A707E /* CWNetWorkRequest.m */; };
 		8B1A86842146648500ED1896 /* CWNetWorkModelFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A86832146648500ED1896 /* CWNetWorkModelFile.m */; };
+		8B1C743E21D4BED40042E493 /* CWNetWorkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1C743D21D4BED40042E493 /* CWNetWorkModel.m */; };
 		8B3B4D7720AECD6B00BFD604 /* CWNetWorkCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3B4D7620AECD6B00BFD604 /* CWNetWorkCheck.m */; };
 		8B4A068A20AC0FED00D6C447 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4A068920AC0FED00D6C447 /* AppDelegate.m */; };
 		8B4A068D20AC0FED00D6C447 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4A068C20AC0FED00D6C447 /* ViewController.m */; };
@@ -31,6 +32,8 @@
 		8B13B8D920B2664D009A707E /* CWNetWorkDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWNetWorkDefine.h; sourceTree = "<group>"; };
 		8B1A86822146648500ED1896 /* CWNetWorkModelFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWNetWorkModelFile.h; sourceTree = "<group>"; };
 		8B1A86832146648500ED1896 /* CWNetWorkModelFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWNetWorkModelFile.m; sourceTree = "<group>"; };
+		8B1C743C21D4BED40042E493 /* CWNetWorkModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWNetWorkModel.h; sourceTree = "<group>"; };
+		8B1C743D21D4BED40042E493 /* CWNetWorkModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWNetWorkModel.m; sourceTree = "<group>"; };
 		8B3B4D7520AECD6B00BFD604 /* CWNetWorkCheck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWNetWorkCheck.h; sourceTree = "<group>"; };
 		8B3B4D7620AECD6B00BFD604 /* CWNetWorkCheck.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWNetWorkCheck.m; sourceTree = "<group>"; };
 		8B4A068520AC0FED00D6C447 /* ColorfulWoodNetWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorfulWoodNetWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +144,8 @@
 				8B13B8D920B2664D009A707E /* CWNetWorkDefine.h */,
 				8B1A86822146648500ED1896 /* CWNetWorkModelFile.h */,
 				8B1A86832146648500ED1896 /* CWNetWorkModelFile.m */,
+				8B1C743C21D4BED40042E493 /* CWNetWorkModel.h */,
+				8B1C743D21D4BED40042E493 /* CWNetWorkModel.m */,
 			);
 			path = CocoapodFiles;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 				8B4A06CA20AC35B700D6C447 /* CWNetWorkHeaderParam.m in Sources */,
 				8B4A068D20AC0FED00D6C447 /* ViewController.m in Sources */,
 				8B3B4D7720AECD6B00BFD604 /* CWNetWorkCheck.m in Sources */,
+				8B1C743E21D4BED40042E493 /* CWNetWorkModel.m in Sources */,
 				8B4A069820AC0FF300D6C447 /* main.m in Sources */,
 				8B4A068A20AC0FED00D6C447 /* AppDelegate.m in Sources */,
 			);

@@ -14,3 +14,4 @@
 #import "CWNetWorkDefine.h"
 #import "CWNetWorkRequest.h"
 #import "CWNetWorkModelFile.h"
+#import "CWNetWorkModel.h"

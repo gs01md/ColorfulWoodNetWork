@@ -64,6 +64,12 @@ static CWNetWorkManager *_instance;
 
 }
 
+- (void)interface_setParam:(NSString *)param value:(NSString*)vl{
 
+    if (param && param.length >0 && vl) {
+        [_instance.requestSerializer setValue:param forHTTPHeaderField:vl];
+    }
+
+}
 
 @end

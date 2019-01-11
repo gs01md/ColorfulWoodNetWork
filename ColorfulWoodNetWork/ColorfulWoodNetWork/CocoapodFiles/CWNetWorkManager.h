@@ -17,4 +17,5 @@
 
 - (void)interface_changeParams:(NSMutableArray<CWNetWorkHeaderParam*>*)array;
 
+- (void)interface_setParam:(NSString *)param value:(NSString*)vl;
 @end
