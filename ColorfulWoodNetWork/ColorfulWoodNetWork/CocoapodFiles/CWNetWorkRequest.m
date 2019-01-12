@@ -18,6 +18,70 @@
 
 @implementation CWNetWorkRequest
 
++ (id)shareInstance{return [CWNetWorkRequest new];}
+
+- (void)interface_requestWithUrl:(NSString*)url type:(CWNetWorkRequestType)type params:(NSMutableDictionary*)params success:(void (^)(id info))success faild:(void (^)(CWNetWorkError * error))faild{
+
+    self.block_requestSuccess = success;
+    self.block_requestFaild = faild;
+
+    if ([AFNetworkReachabilityManager sharedManager].networkReachabilityStatus != AFNetworkReachabilityStatusNotReachable) {
+
+        switch (type) {
+
+            case CWNetWorkRequestType_Get:
+
+                [self func_Get_WithUrl:url parameters:params];
+
+                break;
+
+            case CWNetWorkRequestType_Post:
+
+                [self func_Post_WithUrl:url parameters:params];
+
+                break;
+
+            default:
+                break;
+        }
+
+    }else{
+
+        [self fun_failureReachbility];
+    }
+}
+
+- (void)interface_requestWithUrl:(NSString*)url type:(CWNetWorkRequestType)type params:(NSMutableDictionary*)params delegate:(id)delegate{
+
+    self.delegate = delegate;
+    [self.m_delegates interface_addDelegate:delegate];
+
+    if ([AFNetworkReachabilityManager sharedManager].networkReachabilityStatus != AFNetworkReachabilityStatusNotReachable) {
+
+        switch (type) {
+
+            case CWNetWorkRequestType_Get:
+
+                [self func_Get_WithUrl:url parameters:params];
+
+                break;
+
+            case CWNetWorkRequestType_Post:
+
+                [self func_Post_WithUrl:url parameters:params];
+
+                break;
+
+            default:
+                break;
+        }
+
+    }else{
+
+        [self fun_failureReachbility];
+    }
+}
+
 - (instancetype)initAndRequestWithUrl:(NSString*)url type:(CWNetWorkRequestType)type params:(NSMutableDictionary*)params delegate:(id)delegate{
 
     if (self = [super init]) {
@@ -102,6 +166,8 @@
  */
 - (void)func_Post_WithUrl:(NSString *)urlStr parameters:(NSDictionary *)parameters{
 
+    self.m_isRequesting = YES;
+    
     CWNetWorkManager * net = [CWNetWorkManager sharedManager];
 
     [net POST:urlStr parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -111,19 +177,16 @@
          */
         if( [CWNetWorkCheck interface_check:responseObject]){
 
-            if ([self.delegate respondsToSelector:@selector(CWNetWorkRequestDelegate_success:)]) {
-
-                [self.delegate CWNetWorkRequestDelegate_success:responseObject];
-            }
+            [self fun_success:responseObject];
 
         }else{
 
-            [self fun_failureDelegate:[CWNetWorkCheck interface_error:responseObject]];
+            [self fun_failure:[CWNetWorkCheck interface_error:responseObject]];
         }
 
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
 
-        [self fun_failureDelegate:[CWNetWorkCheck interface_NSError:error]];
+        [self fun_failure:[CWNetWorkCheck interface_NSError:error]];
     }];
 }
 
@@ -134,6 +197,8 @@
  */
 - (void)func_Get_WithUrl:(NSString *)urlStr parameters:(NSDictionary *)parameters{
 
+    self.m_isRequesting = YES;
+
     CWNetWorkManager * net = [CWNetWorkManager sharedManager];
 
     [net GET:urlStr parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -143,19 +208,16 @@
          */
         if( [CWNetWorkCheck interface_check:responseObject]){
 
-            if ([self.delegate respondsToSelector:@selector(CWNetWorkRequestDelegate_success:)]) {
-
-                [self.delegate CWNetWorkRequestDelegate_success:responseObject];
-            }
+            [self fun_success:responseObject];
 
         }else{
 
-            [self fun_failureDelegate:[CWNetWorkCheck interface_error:responseObject]];
+            [self fun_failure:[CWNetWorkCheck interface_error:responseObject]];
         }
 
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
 
-        [self fun_failureDelegate:[CWNetWorkCheck interface_NSError:error]];
+        [self fun_failure:[CWNetWorkCheck interface_NSError:error]];
     }];
 }
 
@@ -166,6 +228,8 @@
  * 当code不为0时，表示接口错误，直接读取message的内容用于显示
  */
 - (NSURLSessionDataTask*)func_Post_Form_WithUrl:(NSString *)urlStr parameters:(NSDictionary *)parameters files:(NSArray<CWNetWorkModelFile*>*)files{
+
+    self.m_isRequesting = YES;
 
     CWNetWorkManager * net = [CWNetWorkManager sharedManager];
 
@@ -189,32 +253,50 @@
          */
         if( [CWNetWorkCheck interface_check:responseObject]){
 
-            if ([self.delegate respondsToSelector:@selector(CWNetWorkRequestDelegate_success:)]) {
-
-                [self.delegate CWNetWorkRequestDelegate_success:responseObject];
-            }
+            [self fun_success:responseObject];
 
         }else{
 
-            [self fun_failureDelegate:[CWNetWorkCheck interface_error:responseObject]];
+            [self fun_failure:[CWNetWorkCheck interface_error:responseObject]];
         }
 
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
 
-        [self fun_failureDelegate:[CWNetWorkCheck interface_NSError:error]];
+        [self fun_failure:[CWNetWorkCheck interface_NSError:error]];
     }];
 }
-
-
 
 /**
  * 返回错误信息
  */
-- (void)fun_failureDelegate:(CWNetWorkError*)error{
+- (void)fun_success:(id)info{
+
+    self.m_isRequesting = NO;
+
+    if ([self.delegate respondsToSelector:@selector(CWNetWorkRequestDelegate_success:)]) {
+
+        [self.delegate CWNetWorkRequestDelegate_success:info];
+    }
+
+    if (self.block_requestSuccess) {
+        self.block_requestSuccess(info);
+    }
+}
+
+/**
+ * 返回错误信息
+ */
+- (void)fun_failure:(CWNetWorkError*)error{
+
+    self.m_isRequesting = NO;
 
     if ([self.delegate respondsToSelector:@selector(CWNetWorkRequestDelegate_failure:)]) {
 
         [self.delegate CWNetWorkRequestDelegate_failure:error];
+    }
+
+    if (self.block_requestFaild) {
+        self.block_requestFaild(error);
     }
 }
 
@@ -226,7 +308,22 @@
     CWNetWorkError *error = [CWNetWorkError new];
     error.m_code = @"-1";
     error.m_message = @"network error!";
-    [self fun_failureDelegate:error];
+    [self fun_failure:error];
+
+    if (self.block_requestFaild) {
+        self.block_requestFaild(error);
+    }
+}
+
+#pragma mark - 属性
+
+- (ColorfulWoodMultiDelegate*)m_delegates{
+
+    if (!_m_delegates) {
+        _m_delegates = [ColorfulWoodMultiDelegate new];
+    }
+
+    return _m_delegates;
 }
 
 @end
