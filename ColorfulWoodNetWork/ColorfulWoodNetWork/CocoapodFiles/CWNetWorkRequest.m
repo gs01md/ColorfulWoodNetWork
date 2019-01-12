@@ -167,7 +167,9 @@
 - (void)func_Post_WithUrl:(NSString *)urlStr parameters:(NSDictionary *)parameters{
 
     self.m_isRequesting = YES;
-    
+
+    [self inner_refreshAuth];
+
     CWNetWorkManager * net = [CWNetWorkManager sharedManager];
 
     [net POST:urlStr parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -198,6 +200,8 @@
 - (void)func_Get_WithUrl:(NSString *)urlStr parameters:(NSDictionary *)parameters{
 
     self.m_isRequesting = YES;
+
+    [self inner_refreshAuth];
 
     CWNetWorkManager * net = [CWNetWorkManager sharedManager];
 
@@ -230,6 +234,8 @@
 - (NSURLSessionDataTask*)func_Post_Form_WithUrl:(NSString *)urlStr parameters:(NSDictionary *)parameters files:(NSArray<CWNetWorkModelFile*>*)files{
 
     self.m_isRequesting = YES;
+
+    [self inner_refreshAuth];
 
     CWNetWorkManager * net = [CWNetWorkManager sharedManager];
 
@@ -314,6 +320,25 @@
         self.block_requestFaild(error);
     }
 }
+#pragma mark - 更新请求认证信息
+/**
+ * 子类实现
+ * 每次请求时，更新自定义的sign等信息
+ */
+- (void)inner_refreshAuth{
+
+}
+
+#pragma mark - 添加代理
+- (void)interface_addDelegate:(id)delegate{
+    self.delegate = delegate;
+    [self.m_delegates interface_addDelegate:delegate];
+}
+
+- (void)interface_removeDelegate:(id)delegate{
+
+    [self.m_delegates interface_removeDelegate:delegate];
+}
 
 #pragma mark - 属性
 
@@ -325,5 +350,7 @@
 
     return _m_delegates;
 }
+
+
 
 @end

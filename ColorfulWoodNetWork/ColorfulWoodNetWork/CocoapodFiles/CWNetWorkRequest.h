@@ -22,6 +22,7 @@
 
 /**
  * 标识：正在请求中
+ * 在子类使用，防止重复请求
  */
 @property(nonatomic, assign) BOOL m_isRequesting;
 
@@ -50,4 +51,15 @@
 - (void)interface_requestWithUrl:(NSString*)url type:(CWNetWorkRequestType)type params:(NSMutableDictionary*)params delegate:(id)delegate;
 
 - (void)interface_requestWithUrl:(NSString*)url type:(CWNetWorkRequestType)type params:(NSMutableDictionary*)params success:(void (^)(id info))success faild:(void (^)(CWNetWorkError * error))faild;
+
+#pragma mark - 添加代理
+- (void)interface_addDelegate:(id)delegate;
+
+- (void)interface_removeDelegate:(id)delegate;
+
+/**
+ * 子类实现
+ * 每次请求时，更新自定义的sign等信息
+ */
+- (void)inner_refreshAuth;
 @end
