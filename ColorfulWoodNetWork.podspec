@@ -21,12 +21,12 @@ s.platform     = :ios, "9.0"
 s.frameworks   = 'Foundation'
 s.frameworks   = 'UIKit'
 
-#s.dependency    'JSONModel',          '~> 1.7.0'
-#s.dependency    'AFNetworking',       '~> 3.2.1'
-#s.dependency    'RealReachability',   '~> 1.2.0'
-s.dependency    'JSONModel'
-s.dependency    'AFNetworking'
-s.dependency    'RealReachability'
+s.dependency    'JSONModel',          '~> 1.7.0'
+s.dependency    'AFNetworking',       '~> 3.2.1'
+s.dependency    'RealReachability',   '~> 1.2.0'
+#s.dependency    'JSONModel'
+#s.dependency    'AFNetworking'
+#s.dependency    'RealReachability'
 s.dependency    'ColorfulWoodSystem'
 s.dependency    'ColorfulWoodTools'
 
