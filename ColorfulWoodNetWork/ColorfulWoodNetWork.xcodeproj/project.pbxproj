@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		004CED8B2552AD6C00B4DF35 /* CWNetConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 004CED8A2552AD6C00B4DF35 /* CWNetConfig.m */; };
 		8B11ADF4214756E3009537F5 /* ColorfulWoodNetWork.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8B11ADF3214756E2009537F5 /* ColorfulWoodNetWork.podspec */; };
 		8B13B8D820B25054009A707E /* CWNetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B13B8D720B25054009A707E /* CWNetWorkRequest.m */; };
 		8B1A86842146648500ED1896 /* CWNetWorkModelFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A86832146648500ED1896 /* CWNetWorkModelFile.m */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		004CED892552AD6C00B4DF35 /* CWNetConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWNetConfig.h; sourceTree = "<group>"; };
+		004CED8A2552AD6C00B4DF35 /* CWNetConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWNetConfig.m; sourceTree = "<group>"; };
 		8B11ADF3214756E2009537F5 /* ColorfulWoodNetWork.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ColorfulWoodNetWork.podspec; path = ../../ColorfulWoodNetWork.podspec; sourceTree = "<group>"; };
 		8B13B8D620B25054009A707E /* CWNetWorkRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWNetWorkRequest.h; sourceTree = "<group>"; };
 		8B13B8D720B25054009A707E /* CWNetWorkRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWNetWorkRequest.m; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 		8B4A069E20AC146B00D6C447 /* CocoapodFiles */ = {
 			isa = PBXGroup;
 			children = (
+				004CED892552AD6C00B4DF35 /* CWNetConfig.h */,
+				004CED8A2552AD6C00B4DF35 /* CWNetConfig.m */,
 				8B4A06C720AC2F9E00D6C447 /* ColorfulWoodNetWork.h */,
 				8B4A069F20AC1B4200D6C447 /* CWNetWorkManager.h */,
 				8B4A06A020AC1B4200D6C447 /* CWNetWorkManager.m */,
@@ -254,6 +259,7 @@
 				8B1C743E21D4BED40042E493 /* CWNetWorkModel.m in Sources */,
 				8B4A069820AC0FF300D6C447 /* main.m in Sources */,
 				8B4A068A20AC0FED00D6C447 /* AppDelegate.m in Sources */,
+				004CED8B2552AD6C00B4DF35 /* CWNetConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

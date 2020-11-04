@@ -7,6 +7,7 @@
 //
 
 #import "CWNetWorkCheck.h"
+#import "CWNetConfig.h"
 
 @implementation CWNetWorkCheck
 
@@ -69,7 +70,8 @@
             if (code && [code isKindOfClass:[NSString class]]
                 ) {
 
-                if ([code isEqual:@"200"]) {
+                CWNetConfig cwConfig = [CWNetConfig sharedManager];
+                if ([code isEqual:cwConfig.m_code]) {
                     valid = TRUE;
                 }
             }
@@ -96,7 +98,7 @@
         if ([responseObject isKindOfClass:[NSDictionary class]] ||
             [responseObject isKindOfClass:[NSMutableDictionary class]]) {
 
-            NSString* code = responseObject[@"code"];
+            NSString* code = responseObject[@"code"] stringValue];
 
             if (code && [code isKindOfClass:[NSString class]]
                 ) {
