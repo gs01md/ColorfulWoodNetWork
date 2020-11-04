@@ -64,12 +64,12 @@
         if ([responseObject isKindOfClass:[NSDictionary class]] ||
             [responseObject isKindOfClass:[NSMutableDictionary class]]) {
 
-            NSString* code = responseObject[@"code"];
+            NSString* code = [responseObject[@"code"] stringValue];
 
             if (code && [code isKindOfClass:[NSString class]]
                 ) {
 
-                if ([code isEqual:@"0"]) {
+                if ([code isEqual:@"200"]) {
                     valid = TRUE;
                 }
             }
