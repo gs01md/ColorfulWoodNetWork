@@ -70,7 +70,7 @@
             if (code && [code isKindOfClass:[NSString class]]
                 ) {
 
-                CWNetConfig cwConfig = [CWNetConfig sharedManager];
+                CWNetConfig* cwConfig = [CWNetConfig sharedManager];
                 if ([code isEqual:cwConfig.m_code]) {
                     valid = TRUE;
                 }
@@ -98,7 +98,7 @@
         if ([responseObject isKindOfClass:[NSDictionary class]] ||
             [responseObject isKindOfClass:[NSMutableDictionary class]]) {
 
-            NSString* code = responseObject[@"code"] stringValue];
+            NSString* code = [responseObject[@"code"] stringValue];
 
             if (code && [code isKindOfClass:[NSString class]]
                 ) {
