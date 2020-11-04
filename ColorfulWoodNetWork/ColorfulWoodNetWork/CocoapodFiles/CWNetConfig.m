@@ -17,7 +17,7 @@ static CWNetConfig *_instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
 
-        _instance = [[CWNetConfig alloc] new];
+        _instance = [[CWNetConfig alloc] init];
         
     });
 
